@@ -1,0 +1,188 @@
+// BOOT SCREEN TEXT
+
+const bootLines = [
+
+"Initializing SnehalOS v1.0...",
+"Initializing SnehalOS v1.0...",
+
+"Loading security modules...",
+"Loading security modules...",
+
+"Starting network interface...",
+"Starting network interface...",
+
+"Checking firewall rules...",
+"Checking firewall rules...",
+
+"Loading penetration testing toolkit...",
+"Loading penetration testing toolkit...",
+
+"Initializing terminal...",
+"Initializing terminal...",
+
+"",
+"Access granted.",
+"Access granted.",
+
+"",
+"Welcome Snehal Singh",
+"Welcome Snehal Singh",
+
+"",
+"Cybersecurity Terminal Portfolio",
+"Cybersecurity Terminal Portfolio"
+
+];
+
+let i = 0;
+
+const bootText = document.getElementById("boot-text");
+
+function showBoot(){
+
+if(i < bootLines.length){
+
+bootText.innerHTML += bootLines[i] + "\n";
+
+i++;
+
+setTimeout(showBoot,400);
+
+}
+
+else{
+
+setTimeout(()=>{
+
+document.getElementById("boot-screen").style.display="none";
+
+startMatrix();
+
+document.getElementById("resume").style.display="block";
+
+loadCharts();
+
+},1500);
+
+}
+
+}
+
+showBoot();
+
+
+// MATRIX BACKGROUND
+
+function startMatrix(){
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const fontSize = 16;
+const columns = Math.floor(canvas.width / fontSize);
+
+const drops = [];
+
+for(let i=0;i<columns;i++){
+drops[i] = 1;
+}
+
+function draw(){
+
+ctx.fillStyle = "rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle = "#00ff9c";
+ctx.font = fontSize + "px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text = letters.charAt(Math.floor(Math.random()*letters.length));
+
+ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){
+drops[i] = 0;
+}
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,33);
+
+}
+
+
+// CHARTS
+
+function loadCharts(){
+
+new Chart(document.getElementById("skillsChart"),{
+
+type:"bar",
+
+data:{
+labels:["Linux","Networking","Web Security","Bug Bounty"],
+
+datasets:[{
+label:"Skill Level",
+data:[70,60,50,40]
+}]
+}
+
+});
+
+
+new Chart(document.getElementById("domainChart"),{
+
+type:"pie",
+
+data:{
+labels:["Web Hacking","Network Security","OSINT","Linux"],
+
+datasets:[{
+data:[35,25,20,20]
+}]
+}
+
+});
+
+
+new Chart(document.getElementById("focusChart"),{
+
+type:"doughnut",
+
+data:{
+labels:["Learning","Practice","Research"],
+
+datasets:[{
+data:[50,30,20]
+}]
+}
+
+});
+
+
+new Chart(document.getElementById("toolsChart"),{
+
+type:"bar",
+
+data:{
+labels:["Nmap","Burp Suite","Kali Linux","Wireshark"],
+
+datasets:[{
+label:"Usage",
+data:[60,40,70,30]
+}]
+}
+
+});
+
+}

@@ -1,0 +1,270 @@
+body{
+
+background:black;
+
+color:#00ff9c;
+
+font-family:'JetBrains Mono','Fira Code','Source Code Pro',monospace;
+
+margin:0;
+
+}
+
+
+/* MATRIX BACKGROUND */
+
+#matrix{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100vw;
+
+height:100vh;
+
+z-index:-1;
+
+background:black;
+
+}
+
+
+
+/* CYBER GRID */
+
+.grid-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+background-image:
+
+linear-gradient(rgba(0,255,150,0.08) 1px, transparent 1px),
+
+linear-gradient(90deg, rgba(0,255,150,0.08) 1px, transparent 1px);
+
+background-size:50px 50px;
+
+z-index:0;
+
+}
+
+
+
+/* BOOT SCREEN */
+
+#boot-screen{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+background:black;
+
+color:#00ff9c;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:20px;
+
+z-index:3;
+
+}
+
+#boot-text{
+
+white-space:pre-line;
+
+}
+
+
+
+/* PORTFOLIO */
+
+#resume{
+
+display:none;
+
+padding:30px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+/* HEADER */
+
+header{
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+header h1{
+
+font-size:42px;
+
+color:#00ff9c;
+
+}
+
+header p{
+
+color:#00aaff;
+
+}
+
+
+
+/* INFO CARDS */
+
+.info{
+
+display:flex;
+
+gap:30px;
+
+margin-bottom:40px;
+
+}
+
+.card{
+
+background:#021a14;
+
+padding:20px;
+
+border:1px solid #00ff9c;
+
+flex:1;
+
+}
+
+a{
+
+color:#00aaff;
+
+text-decoration:none;
+
+}
+
+
+
+/* CHARTS */
+
+.charts{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+margin-bottom:40px;
+
+}
+
+.chart-card{
+
+background:#021a14;
+
+padding:20px;
+
+border:1px solid #00ff9c;
+
+}
+
+
+
+/* SKILL SECTION */
+
+.skills{
+
+background:#021a14;
+
+padding:20px;
+
+border:1px solid #00ff9c;
+
+}
+
+.skill{
+
+margin-bottom:20px;
+
+}
+
+
+
+/* PROGRESS BARS */
+
+.progress{
+
+width:100%;
+
+height:20px;
+
+background:#000d0a;
+
+border:1px solid #00ff9c;
+
+overflow:hidden;
+
+}
+
+.bar{
+
+height:100%;
+
+background:linear-gradient(90deg,#00ff9c,#00ffaa);
+
+width:0%;
+
+animation:loadBar 2s forwards;
+
+}
+
+
+
+/* SKILL LEVELS */
+
+.linux{ width:80% }
+
+.kali{ width:75% }
+
+.nmap{ width:70% }
+
+.web{ width:65% }
+
+.bounty{ width:60% }
+
+
+
+@keyframes loadBar{
+
+from{ width:0 }
+
+}
