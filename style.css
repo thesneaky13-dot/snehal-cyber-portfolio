@@ -283,6 +283,26 @@ box-shadow:0 0 20px #00ff9c;
 background:black;
 }
 
+.terminal-section{
+margin-top:40px;
+}
+
+.terminal{
+background:black;
+border:1px solid #00ff9c;
+box-shadow:0 0 20px #00ff9c;
+padding:20px;
+height:200px;
+overflow:hidden;
+font-family:'JetBrains Mono', monospace;
+color:#00ff9c;
+}
+
+#terminalLogs{
+font-size:14px;
+line-height:1.6;
+}
+
 #attackCanvas{
 width:100%;
 height:100%;
