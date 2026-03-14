@@ -229,3 +229,40 @@ function draw(){
 setInterval(randomAttack,300);
 
 draw();
+
+const logs = [
+"Initializing intrusion detection system...",
+"Scanning network ports...",
+"Detected suspicious traffic from 192.168.45.22",
+"Firewall rule triggered",
+"SQL injection attempt blocked",
+"Brute force attack detected on SSH port",
+"Malware signature detected and quarantined",
+"Nmap scan detected from external IP",
+"Unauthorized login attempt blocked",
+"Monitoring network packets..."
+];
+
+const terminal = document.getElementById("terminalLogs");
+
+function generateLog(){
+
+let log = logs[Math.floor(Math.random()*logs.length)];
+
+let time = new Date().toLocaleTimeString();
+
+let line = `[${time}] ${log}`;
+
+let div = document.createElement("div");
+
+div.textContent = line;
+
+terminal.prepend(div);
+
+if(terminal.children.length > 10){
+terminal.removeChild(terminal.lastChild);
+}
+
+}
+
+setInterval(generateLog,1500);
