@@ -266,3 +266,34 @@ terminal.removeChild(terminal.lastChild);
 }
 
 setInterval(generateLog,1500);
+
+function scanCode(){
+
+let code = document.getElementById("codeInput").value;
+
+let results = [];
+
+if(code.includes("<script>")){
+results.push("⚠ Possible XSS vulnerability detected.");
+}
+
+if(code.toLowerCase().includes("select * from")){
+results.push("⚠ Possible SQL Injection pattern detected.");
+}
+
+if(code.includes("password=")){
+results.push("⚠ Hardcoded password detected.");
+}
+
+if(code.includes("http://")){
+results.push("⚠ Insecure HTTP connection detected.");
+}
+
+if(results.length === 0){
+results.push("✅ No obvious vulnerabilities detected.");
+}
+
+let output = document.getElementById("scanResults");
+
+output.innerHTML = "<b>AI Security Analysis:</b><br><br>" + results.join("<br>");
+}
