@@ -186,3 +186,46 @@ data:[60,40,70,30]
 });
 
 }
+
+const canvas = document.getElementById("attackCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = 400;
+
+const attacks = [];
+
+function randomAttack(){
+    attacks.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        radius:2,
+        life:100
+    });
+}
+
+function draw(){
+    ctx.fillStyle="rgba(0,0,0,0.2)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle="#00ff9c";
+
+    attacks.forEach((a,i)=>{
+        ctx.beginPath();
+        ctx.arc(a.x,a.y,a.radius,0,Math.PI*2);
+        ctx.fill();
+
+        a.radius+=0.5;
+        a.life--;
+
+        if(a.life<=0){
+            attacks.splice(i,1);
+        }
+    });
+
+    requestAnimationFrame(draw);
+}
+
+setInterval(randomAttack,300);
+
+draw();
