@@ -3,33 +3,24 @@
 const bootLines = [
 
 "Initializing SnehalOS v1.0...",
-"Initializing SnehalOS v1.0...",
 
-"Loading security modules...",
 "Loading security modules...",
 
 "Starting network interface...",
-"Starting network interface...",
 
-"Checking firewall rules...",
 "Checking firewall rules...",
 
 "Loading penetration testing toolkit...",
-"Loading penetration testing toolkit...",
 
-"Initializing terminal...",
 "Initializing terminal...",
 
 "",
 "Access granted.",
-"Access granted.",
 
 "",
-"Welcome Snehal Singh",
-"Welcome Snehal Singh",
+"Welcome Recruiter!",
 
 "",
-"Cybersecurity Terminal Portfolio",
 "Cybersecurity Terminal Portfolio"
 
 ];
